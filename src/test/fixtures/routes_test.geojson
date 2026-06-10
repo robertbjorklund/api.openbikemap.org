@@ -1,0 +1,50 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "type": "route",
+        "name": "Stockholm Local Cycle Network",
+        "ref": "1",
+        "network": "lcn",
+        "distance": "45 km",
+        "roundtrip": false,
+        "status": "operating",
+        "sources": [{ "type": "openstreetmap", "id": "relation/200001" }],
+        "id": "route_stockholm_lcn_001"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [18.04, 59.33],
+          [18.05, 59.34],
+          [18.06, 59.35],
+          [18.07, 59.36]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "type": "route",
+        "name": "Sverigeleden Stockholm",
+        "ref": "N1",
+        "network": "ncn",
+        "distance": "120 km",
+        "roundtrip": false,
+        "status": "operating",
+        "sources": [{ "type": "openstreetmap", "id": "relation/200002" }],
+        "id": "route_sverigeleden_ncn_002"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [18.0, 59.3],
+          [18.05, 59.32],
+          [18.1, 59.34]
+        ]
+      }
+    }
+  ]
+}

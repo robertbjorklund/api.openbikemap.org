@@ -1,0 +1,95 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "type": "trail",
+        "category": "cycleway",
+        "name": "Hornsgatan Cycleway",
+        "ref": null,
+        "surface": "asphalt",
+        "smoothness": null,
+        "tracktype": null,
+        "mtbScale": null,
+        "sacScale": null,
+        "bicycle": "designated",
+        "lit": true,
+        "oneway": false,
+        "network": null,
+        "lengthMeters": 1200,
+        "status": "operating",
+        "sources": [{ "type": "openstreetmap", "id": "way/100001" }],
+        "id": "trail_hornsgatan_cycleway_001"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [18.05, 59.32],
+          [18.055, 59.325],
+          [18.06, 59.33]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "type": "trail",
+        "category": "mtb_trail",
+        "name": "Södermalm MTB Trail",
+        "ref": "MTB-1",
+        "surface": "dirt",
+        "smoothness": "bad",
+        "tracktype": null,
+        "mtbScale": 2,
+        "sacScale": null,
+        "bicycle": "yes",
+        "lit": false,
+        "oneway": false,
+        "network": null,
+        "lengthMeters": 3500,
+        "status": "operating",
+        "sources": [{ "type": "openstreetmap", "id": "way/100002" }],
+        "id": "trail_sodermalm_mtb_002"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [18.07, 59.31],
+          [18.075, 59.315],
+          [18.08, 59.32]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "type": "trail",
+        "category": "gravel_track",
+        "name": "Stockholm Forest Track",
+        "ref": null,
+        "surface": "gravel",
+        "smoothness": "intermediate",
+        "tracktype": "grade2",
+        "mtbScale": null,
+        "sacScale": null,
+        "bicycle": "yes",
+        "lit": false,
+        "oneway": false,
+        "network": null,
+        "lengthMeters": 8200,
+        "status": "operating",
+        "sources": [{ "type": "openstreetmap", "id": "way/100003" }],
+        "id": "trail_stockholm_forest_003"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [18.1, 59.34],
+          [18.11, 59.345],
+          [18.12, 59.35]
+        ]
+      }
+    }
+  ]
+}

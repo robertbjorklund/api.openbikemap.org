@@ -1,0 +1,59 @@
+services:
+  app:
+    build:
+      context: .
+      target: development
+    environment:
+      - POSTGRES_HOST=postgres
+      - POSTGRES_USER=openbikemap
+      - POSTGRES_PASSWORD=openbikemap_dev
+      - POSTGRES_DB=openbikemap
+    volumes:
+      - .:/app
+    ports:
+      - 3002:3000
+      - 9223:9222
+    command: 'sh -c "sleep 5 && npm run build && npm run start"'
+    networks:
+      - db
+    depends_on:
+      postgres:
+        condition: service_healthy
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "wget",
+          "--no-verbose",
+          "--tries=1",
+          "--spider",
+          "http://localhost:3000/health",
+        ]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+      start_period: 30s
+
+  postgres:
+    image: postgres:17-alpine
+    ports:
+      - 5434:5432
+    environment:
+      - POSTGRES_USER=openbikemap
+      - POSTGRES_PASSWORD=openbikemap_dev
+      - POSTGRES_DB=openbikemap
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - db
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U openbikemap"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+networks:
+  db:
+
+volumes:
+  postgres_data:
