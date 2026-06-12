@@ -26,7 +26,7 @@
     "vitest": "^4.0.0"
   },
   "scripts": {
-    "import-data": "./scripts/import-data.sh",
+    "import-data": "node -r ts-node/register src/scripts/import_data.ts",
     "drop-database": "./scripts/drop-database.sh",
     "build": "tsc -p .",
     "watch": "tsc -w -p .",

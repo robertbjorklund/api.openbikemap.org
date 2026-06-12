@@ -7,7 +7,8 @@ COPY package*.json ./
 FROM base AS development
 
 COPY docker-entrypoint-dev.sh /usr/local/bin/
-RUN chmod +x /usr/local/bin/docker-entrypoint-dev.sh
+RUN sed -i 's/\r$//' /usr/local/bin/docker-entrypoint-dev.sh && \
+    chmod +x /usr/local/bin/docker-entrypoint-dev.sh
 
 EXPOSE 3000 9222
 ENV NODE_ENV=development

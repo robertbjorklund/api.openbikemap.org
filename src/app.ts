@@ -75,7 +75,15 @@ export function createApp(repository: Repository) {
         return;
       }
 
-      const results: GeoJSON.Feature[] = await repository.search(text, 10);
+      let limit = 10;
+      if (typeof req.query.limit === "string") {
+        const parsed = Number.parseInt(req.query.limit, 10);
+        if (!Number.isNaN(parsed) && parsed > 0) {
+          limit = Math.min(parsed, 100);
+        }
+      }
+
+      const results: GeoJSON.Feature[] = await repository.search(text, limit);
       res.send(results);
     }),
   );
