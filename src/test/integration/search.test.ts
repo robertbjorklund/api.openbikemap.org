@@ -17,7 +17,7 @@ describe("GET /search", () => {
       .expect(200);
 
     expect(response.body.length).toBeGreaterThan(0);
-    expect(response.body[0].properties.name).toBe("Hornsgatan Cycleway");
+    expect(response.body[0].properties.name).toBe("Hornsgatan MTB Trail");
     expect(response.body[0].properties.type).toBe("trail");
   });
 

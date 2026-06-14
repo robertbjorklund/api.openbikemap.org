@@ -5,22 +5,22 @@
       "type": "Feature",
       "properties": {
         "type": "trail",
-        "category": "cycleway",
-        "name": "Hornsgatan Cycleway",
+        "category": "mtb_trail",
+        "name": "Hornsgatan MTB Trail",
         "ref": null,
-        "surface": "asphalt",
+        "surface": "dirt",
         "smoothness": null,
         "tracktype": null,
-        "mtbScale": null,
+        "mtbScale": 1,
         "sacScale": null,
-        "bicycle": "designated",
+        "bicycle": "yes",
         "lit": true,
         "oneway": false,
         "network": null,
         "lengthMeters": 1200,
         "status": "operating",
         "sources": [{ "type": "openstreetmap", "id": "way/100001" }],
-        "id": "trail_hornsgatan_cycleway_001"
+        "id": "trail_hornsgatan_mtb_001"
       },
       "geometry": {
         "type": "LineString",
@@ -65,13 +65,13 @@
       "type": "Feature",
       "properties": {
         "type": "trail",
-        "category": "gravel_track",
-        "name": "Stockholm Forest Track",
+        "category": "mtb_trail",
+        "name": "Stockholm Forest MTB",
         "ref": null,
         "surface": "gravel",
         "smoothness": "intermediate",
         "tracktype": "grade2",
-        "mtbScale": null,
+        "mtbScale": 0,
         "sacScale": null,
         "bicycle": "yes",
         "lit": false,
@@ -80,7 +80,7 @@
         "lengthMeters": 8200,
         "status": "operating",
         "sources": [{ "type": "openstreetmap", "id": "way/100003" }],
-        "id": "trail_stockholm_forest_003"
+        "id": "trail_stockholm_mtb_003"
       },
       "geometry": {
         "type": "LineString",

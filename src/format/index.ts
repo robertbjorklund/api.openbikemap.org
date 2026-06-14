@@ -8,11 +8,7 @@ export enum FeatureType {
 }
 
 export enum TrailCategory {
-  Cycleway = "cycleway",
-  BicycleRoute = "bicycle_route",
   MtbTrail = "mtb_trail",
-  GravelTrack = "gravel_track",
-  SharedPath = "shared_path",
 }
 
 export enum Status {

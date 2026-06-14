@@ -48,11 +48,12 @@ describe("GET /features/:id.geojson", () => {
 
   it("returns a trail by canonical ID", async () => {
     const response = await request(app)
-      .get("/features/trail_hornsgatan_cycleway_001.geojson")
+      .get("/features/trail_hornsgatan_mtb_001.geojson")
       .expect(200);
 
     expect(response.body.properties.type).toBe("trail");
-    expect(response.body.properties.id).toBe("trail_hornsgatan_cycleway_001");
+    expect(response.body.properties.id).toBe("trail_hornsgatan_mtb_001");
+    expect(response.body.properties.category).toBe("mtb_trail");
   });
 
   it("returns a route by canonical ID", async () => {
