@@ -12,6 +12,7 @@
         "roundtrip": false,
         "status": "operating",
         "sources": [{ "type": "openstreetmap", "id": "relation/200001" }],
+        "groupId": "group_stockholm_lcn",
         "id": "route_stockholm_lcn_001"
       },
       "geometry": {
@@ -43,6 +44,28 @@
           [18.0, 59.3],
           [18.05, 59.32],
           [18.1, 59.34]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "type": "route",
+        "name": "Stockholm Local Cycle Network",
+        "ref": "1",
+        "network": "lcn",
+        "distance": "45 km",
+        "roundtrip": false,
+        "status": "operating",
+        "sources": [{ "type": "openstreetmap", "id": "relation/200003" }],
+        "groupId": "group_stockholm_lcn",
+        "id": "route_stockholm_lcn_002"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [18.08, 59.37],
+          [18.09, 59.38]
         ]
       }
     }

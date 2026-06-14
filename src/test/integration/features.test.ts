@@ -69,3 +69,33 @@ describe("GET /features/:id.geojson", () => {
       .expect(404);
   });
 });
+
+describe("GET /features/groups/:groupId.geojson", () => {
+  let app: ReturnType<typeof createApp>;
+
+  beforeAll(async () => {
+    const repository = await getRepository();
+    app = createApp(repository);
+  });
+
+  it("returns all features in a group", async () => {
+    const response = await request(app)
+      .get("/features/groups/group_stockholm_lcn.geojson")
+      .expect(200);
+
+    expect(response.body.type).toBe("FeatureCollection");
+    expect(response.body.features).toHaveLength(2);
+    expect(
+      response.body.features.every(
+        (feature: { properties: { groupId: string } }) =>
+          feature.properties.groupId === "group_stockholm_lcn",
+      ),
+    ).toBe(true);
+  });
+
+  it("returns 404 for unknown groupId", async () => {
+    await request(app)
+      .get("/features/groups/nonexistent-group.geojson")
+      .expect(404);
+  });
+});

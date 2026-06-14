@@ -79,12 +79,28 @@ export function createApp(repository: Repository) {
       if (typeof req.query.limit === "string") {
         const parsed = Number.parseInt(req.query.limit, 10);
         if (!Number.isNaN(parsed) && parsed > 0) {
-          limit = Math.min(parsed, 100);
+          limit = Math.min(parsed, 200);
         }
       }
 
       const results: GeoJSON.Feature[] = await repository.search(text, limit);
       res.send(results);
+    }),
+  );
+
+  app.get(
+    "/features/groups/:groupId.geojson",
+    async(async (req, res) => {
+      const groupId = req.params.groupId as string;
+      const features = await repository.getByGroupId(groupId);
+      if (features.length === 0) {
+        res.sendStatus(404);
+        return;
+      }
+      res.send({
+        type: "FeatureCollection",
+        features,
+      });
     }),
   );
 

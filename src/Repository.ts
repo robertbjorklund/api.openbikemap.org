@@ -54,6 +54,18 @@ export class Repository {
     return rowToFeature(result.rows[0]);
   };
 
+  getByGroupId = async (groupId: string): Promise<Feature[]> => {
+    const result = await this.pool.query(
+      `SELECT id, type, geometry, properties
+       FROM features
+       WHERE properties->>'groupId' = $1
+       ORDER BY id`,
+      [groupId],
+    );
+
+    return result.rows.map(rowToFeature);
+  };
+
   search = async (text: string, limit: number): Promise<Feature[]> => {
     const searchLower = text.toLowerCase();
     const tokens = searchLower.split(/\s+/).filter((t) => t.length > 0);

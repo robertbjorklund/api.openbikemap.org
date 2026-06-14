@@ -36,6 +36,8 @@ export interface Source {
 export interface TrailProperties {
   type: FeatureType.Trail;
   id: string;
+  /** Stable id for all segments of the same logical trail (name/ref group). */
+  groupId: string | null;
   category: TrailCategory;
   name: string | null;
   ref: string | null;
@@ -56,6 +58,8 @@ export interface TrailProperties {
 export interface RouteProperties {
   type: FeatureType.Route;
   id: string;
+  /** Stable id for all segments of the same logical route (name/ref group). */
+  groupId: string | null;
   name: string | null;
   ref: string | null;
   network: string | null;
