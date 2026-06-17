@@ -27,6 +27,7 @@
   },
   "scripts": {
     "import-data": "node -r ts-node/register src/scripts/import_data.ts",
+    "import-data:prod": "node dist/scripts/import_data.js",
     "drop-database": "./scripts/drop-database.sh",
     "build": "tsc -p .",
     "watch": "tsc -w -p .",
